@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data</title>
+</head>
+<body>
+    <h1>Welcome, {{ student['name'] }}</h1>
+    <p><strong>department:</strong> {{ student['details']['department'] if student['details'] else 'N/A' }}</p>
+    <p><strong>Email:</strong> {{ student['details']['email'] if student['details'] else 'N/A' }}</p>
+
+    <h2>Attendance Record:</h2>
+    <ul>
+        {% for record in student['attendance'] %}
+            <li>{{ record }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
